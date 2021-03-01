@@ -39,7 +39,6 @@ public class RedesController {
 						System.out.println(line.trim());
 						System.out.println(" ");
 					}
-//					System.out.println(line);
 					line = buffer.readLine();
 				}
 			} catch (IOException e) {
@@ -68,9 +67,7 @@ public class RedesController {
 						String [] list = line.split(" ");
 						line = list[7];
 						System.out.println(line.trim());
-//						System.out.println(" ");
 					}
-//					System.out.println(line);
 					line = buffer.readLine();
 				}
 			} catch (IOException e) {
@@ -104,7 +101,6 @@ public class RedesController {
 						line = list[8];
 						System.out.println(line.trim());
 					}
-//					System.out.println(line);
 					line = buffer.readLine();
 				}
 				
@@ -136,7 +132,6 @@ public class RedesController {
 						line = list[4];
 						System.out.println(line.trim() + "ms");
 					}
-//					System.out.println(line);
 					line = buffer.readLine();
 				}
 				

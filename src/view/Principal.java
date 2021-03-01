@@ -11,7 +11,8 @@ public class Principal {
 }
 	
 	public static void menu() {
-		 Scanner scan = new Scanner(System.in);
+		 @SuppressWarnings("resource")
+		Scanner scan = new Scanner(System.in);
 		 System.out.println("Digite 1 para ver IPs \nDigite 2 para ver tempo médio de PINGs \nDigite 0 para encerrar.");
 		 int select = scan.nextInt();
 		 RedesController ntw = new RedesController();
@@ -23,14 +24,14 @@ public class Principal {
 			 System.exit(0);
 			 break;
 		 case 1:
-			 Scanner scan2 = new Scanner(System.in);
+			 @SuppressWarnings("unused") Scanner scan2 = new Scanner(System.in);
 			 System.out.println("Aqui está: \n");
 			 ntw.adapterView(os);
 			 System.out.println("\n");
 			 menu();
 			 break;
 		 case 2:
-			 Scanner scan3 = new Scanner(System.in);
+			 @SuppressWarnings("unused") Scanner scan3 = new Scanner(System.in);
 			 System.out.println("Aqui está: \n");
 			 ntw.pingCounter(os);
 			 System.out.println("\n");
