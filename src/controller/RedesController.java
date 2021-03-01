@@ -98,7 +98,7 @@ public class RedesController {
 				
 				while (line != null) {
 					if (line.contains("dia")) {
-						System.out.println("Tempo médio do ping: ");
+						System.out.println("Tempo mï¿½dio do ping: ");
 						line = line.trim();
 						String [] list = line.split(" ");
 						line = list[8];
@@ -114,16 +114,36 @@ public class RedesController {
 			
 		}
 		
+		if (os.contains("Linux")) {
+			StringBuffer cmd = new StringBuffer();
+			cmd.append("ping -c 10");
+			cmd.append(" ");
+			cmd.append(server);
+	        
+			try {
+				Process p = Runtime.getRuntime().exec(cmd.toString());
+				System.out.println("Disparando...");
+				InputStream flow = p.getInputStream();
+				InputStreamReader reader = new InputStreamReader(flow);
+				BufferedReader buffer = new BufferedReader(reader);
+				String line = buffer.readLine();
+				
+				while (line != null) {
+					if (line.contains("avg")) {
+						System.out.println("Tempo mï¿½dio do ping: ");
+						line = line.trim();
+						String [] list = line.split("/");
+						line = list[4];
+						System.out.println(line.trim());
+					}
+//					System.out.println(line);
+					line = buffer.readLine();
+				}
+				
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+			
+		}
 	}
-
-
-
-
-
-
-
-
-
-
-
 }
