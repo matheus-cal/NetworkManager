@@ -134,7 +134,7 @@ public class RedesController {
 						line = line.trim();
 						String [] list = line.split("/");
 						line = list[4];
-						System.out.println(line.trim());
+						System.out.println(line.trim() + "ms");
 					}
 //					System.out.println(line);
 					line = buffer.readLine();
