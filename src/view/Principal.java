@@ -13,7 +13,7 @@ public class Principal {
 	public static void menu() {
 		 @SuppressWarnings("resource")
 		Scanner scan = new Scanner(System.in);
-		 System.out.println("Digite 1 para ver IPs \nDigite 2 para ver tempo médio de PINGs \nDigite 0 para encerrar.");
+		 System.out.println("Digite 1 para ver IPs \nDigite 2 para ver tempo médio de PINGs \nDigite 0 para encerrar o programa.");
 		 int select = scan.nextInt();
 		 RedesController ntw = new RedesController();
 		 String os = ntw.os();
