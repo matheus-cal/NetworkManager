@@ -11,8 +11,8 @@ public class Principal {
 		
 //		String server = "www.google.com.br";
 		
-		ntw.adapterView(os);
-//		ntw.pingCounter(os, server);
+//		ntw.adapterView(os);
+		ntw.pingCounter(os);
 //		System.out.println(os);
 	}
 

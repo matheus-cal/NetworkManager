@@ -79,9 +79,42 @@ public class RedesController {
 		}
 	}
 
-//	public void pingCounter(String os, String server) {
-//		
-//	}
+	public void pingCounter(String os) {
+		String server = "www.google.com.br";
+		
+		if (os.contains("Windows")) {
+			StringBuffer cmd = new StringBuffer();
+			cmd.append("ping -n 10");
+			cmd.append(" ");
+			cmd.append(server);
+	        
+			try {
+				Process p = Runtime.getRuntime().exec(cmd.toString());
+				System.out.println("Disparando...");
+				InputStream flow = p.getInputStream();
+				InputStreamReader reader = new InputStreamReader(flow);
+				BufferedReader buffer = new BufferedReader(reader);
+				String line = buffer.readLine();
+				
+				while (line != null) {
+					if (line.contains("dia")) {
+						System.out.println("Tempo médio do ping: ");
+						line = line.trim();
+						String [] list = line.split(" ");
+						line = list[8];
+						System.out.println(line.trim());
+					}
+//					System.out.println(line);
+					line = buffer.readLine();
+				}
+				
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+			
+		}
+		
+	}
 
 
 
